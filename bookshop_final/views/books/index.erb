@@ -1,0 +1,39 @@
+<h1 style="color:green;">Book Inventory</h1>
+
+<p><a href="/books/new" style="color:blue; font-size:20px">Add book(s)</a></p> 
+
+<table>
+  <tr style="color:black;">
+    <th align="left">Title</th>
+    <th align="left">Author</th> 
+    <th align="left">Quantity</th>
+    <th align="left">Stock Level</th>
+    <th align="left">Buy Price (£)</th>
+    <th align="left">Sell Price (£)</th>
+    <th align="left">Mark Up (£)</th>
+  </tr>
+
+  <% for book in @books %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.author.author_full_name() %></td>
+    <td><%= book.quantity %></td>
+    <td><%= book.stock_level %></td>
+    <td><%= book.buy_price %></td> 
+    <td><%= book.sell_price %></td> 
+    <td><%= sprintf('%.2f', book.markup) %></td> 
+    <td>
+    <form method="post" action="/books/<%= book.id %>/delete">
+      <input type="submit" style="color:red;" value="Remove Book"/>
+    </form>
+    </td>
+    <td>
+    <a href="/books/<%= book.id %>/edit" class="edit-link-blue">Edit Book</a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+

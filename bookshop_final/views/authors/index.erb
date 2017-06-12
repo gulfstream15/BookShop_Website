@@ -1,0 +1,24 @@
+<h1 style="color:brown;">Author Inventory</h1>
+
+<p><a href="/authors/new" style="color:blue; font-size:20px">Add an author</a></p> 
+
+<table>
+
+  <tr style="color:black;">
+    <th>First Name</th>
+    <th></th>
+    <th>Second Name</th>
+  </tr>
+
+  <% for author in @authors %>
+  <tr>
+    <td><%= author.first_name %></td>
+    <th></th>
+    <td><%= author.last_name %></td>
+    <td>
+      <a href="/authors/<%= author.id %>/edit" class="edit-link-blue">Edit Author</a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
