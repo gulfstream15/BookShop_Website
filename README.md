@@ -1,6 +1,6 @@
 
 # BookShop_Website
-A children's bookstore app developed using Ruby/SQL/Sinatra
+A children's bookshop web app developed using Ruby/SQL/Sinatra
 
 This app enables a bookshop owner/worker to manage the shop's stock. This is not
 an app for customers, but for shop employees only. The user can:
